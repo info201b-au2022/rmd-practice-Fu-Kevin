@@ -1,4 +1,5 @@
 # A brief analysis of the NYT COVID-19 data
+##There are 97363366 Covid cases happened in the US, and the total death is 1067450 people.
 
 # Load the tidyverse package
 library(tidyverse)
@@ -11,10 +12,9 @@ get_total_cases <- function() {
   total_cases <- national %>%
     filter(cases == max(cases)) %>%
     pull(cases)
-  return(prettyNum(total_cases,big.mark=",",scientific=FALSE))
+  return(total_cases)
 }
 
-?prettyNum()
 
 # This function returns the total number of cases in the US
 get_total_deaths <- function() {
